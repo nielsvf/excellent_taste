@@ -62,6 +62,8 @@ if (isset($_GET["type"])) {
             include 'includes/overzichten/overzicht_kok.php';
     } else if ($overzichtType === "ober") { //Als argument overzichttype kok is, laat de overzicht van kok zien
             include 'includes/overzichten/overzicht_ober.php';
+    }else if ($overzichtType === "omzet") { //Als argument overzichttype kok is, laat de overzicht van kok zien
+            include 'includes/overzichten/overzicht_weekomzet.php';
     } } else { ?> <!-- Als er geen argument wordt gepasseerd, dan laat de applicatie verschillende opties zien. -->
         <div style="margin-top:40px; color:black; background: white;" class="container">
             <br>
@@ -70,6 +72,7 @@ if (isset($_GET["type"])) {
             <a href="?type=kok"><font color="blue">Kok</font></a><br><br>
             <a href="?type=barman"><font color="blue">Barman</font></a><br><br>
             <a href="?type=ober"><font color="blue">Ober</font></a><br><br>
+            <a href="?type=omzet"><font color="blue">Weekomzet</font></a><br><br>
         </div>
     <?php } ?>
 

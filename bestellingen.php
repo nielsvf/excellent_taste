@@ -3,7 +3,7 @@
 $datumTijdGet = htmlspecialchars_decode($_GET["datumtijd"]);
 $tafelNummerGet = $_GET["tafel"];
 
-include_once("/DB/DBConfig.php");
+include_once("DB/DBConfig.php");
 
 ?>
 

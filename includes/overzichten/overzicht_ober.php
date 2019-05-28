@@ -41,4 +41,9 @@ $sql_ober_overzicht_klaar = "SELECT * FROM bestelling LEFT JOIN menuitem ON best
         </tbody>
     </table>
 
+
+    <?php
+
+
+
 </div>
