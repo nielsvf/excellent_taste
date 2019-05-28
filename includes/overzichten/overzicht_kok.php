@@ -5,10 +5,6 @@ $sql_gerechten_overzicht = "SELECT * FROM bestelling LEFT JOIN menuitem ON beste
 $sql_hapjes_overzicht = "SELECT * FROM bestelling LEFT JOIN menuitem ON bestelling.menuitemcode = menuitem.menuitemcode WHERE bestelling.klaar = 0 AND datumtijd LIKE '%$dateToday%' AND menuitem.subgerechtcode BETWEEN 14 AND 15 ORDER BY datumtijd, tafel DESC";
 
 
-$sql_gerechten_overzicht_klaar = "SELECT * FROM bestelling LEFT JOIN menuitem ON bestelling.menuitemcode = menuitem.menuitemcode WHERE bestelling.klaar = 1 AND datumtijd LIKE '%$dateToday%' AND menuitem.subgerechtcode BETWEEN 1 AND 9 ORDER BY datumtijd, tafel DESC";
-$sql_hapjes_overzicht_klaar = "SELECT * FROM bestelling LEFT JOIN menuitem ON bestelling.menuitemcode = menuitem.menuitemcode WHERE bestelling.klaar = 1 AND datumtijd LIKE '%$dateToday%' AND menuitem.subgerechtcode BETWEEN 14 AND 15 ORDER BY datumtijd, tafel DESC";
-
-
 ?>
 
 <div style="margin-top:40px; color:black; background: white;" class="container">
@@ -77,36 +73,4 @@ $sql_hapjes_overzicht_klaar = "SELECT * FROM bestelling LEFT JOIN menuitem ON be
         <?php } ?>
         </tbody>
     </table>
-
-
-    <table class="table table-sm table-striped" >
-        <h3>Klaar</h3>
-        <thead>
-        <tr>
-            <th>Tijd</th>
-            <th>Tafel</th>
-            <th>Menuitem</th>
-            <th>Aantal</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($db->query($sql_gerechten_overzicht_klaar) as $results){ ?>
-            <tr>
-                <td><?php echo $results["datumtijd"]; ?></td>
-                <td><?php echo $results["tafel"]; ?></td>
-                <td><?php echo $results["menuitem"]; ?></td>
-                <td><?php echo $results["aantal"]; ?></td>
-            </tr>
-        <?php } ?>
-        <?php foreach ($db->query($sql_hapjes_overzicht_klaar) as $results){ ?>
-            <tr>
-                <td><?php echo $results["datumtijd"]; ?></td>
-                <td><?php echo $results["tafel"]; ?></td>
-                <td><?php echo $results["menuitem"]; ?></td>
-                <td><?php echo $results["aantal"]; ?></td>
-            </tr>
-        <?php } ?>
-        </tbody>
-    </table>
-
 </div>
